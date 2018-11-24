@@ -10,6 +10,7 @@ public class Protestor : MonoBehaviour {
 	public GameObject smallBlood;
 	public GameObject largeBlood;
 	public GameObject screenShakeSmall;
+	public GameObject corpse;
 
 	public int hitPoints;
 
@@ -41,6 +42,7 @@ public class Protestor : MonoBehaviour {
 		{
 			Instantiate(largeBlood, transform.position, Quaternion.identity);
 			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
+			Instantiate(corpse, transform.position, Quaternion.identity);
 			SoundManager.instance.PlayOnceAltered(1);
 			Destroy(gameObject);
 		}

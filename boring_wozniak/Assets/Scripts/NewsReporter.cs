@@ -10,6 +10,10 @@ public class NewsReporter : MonoBehaviour {
 	public GameObject smallBlood;
 	public GameObject largeBlood;
 	public GameObject screenShakeSmall;
+	public GameObject corpse;
+	public float speed;
+
+	private Vector2 direction;
 
 	public int hitPoints;
 
@@ -22,6 +26,11 @@ public class NewsReporter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		//FollowPlayer
+		direction = GameManager.instance.GetComponent<GameManager>().trump.transform.position - transform.position;
+		direction.Normalize();
+		transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
 
 
 		//Update rendering depth
@@ -41,6 +50,7 @@ public class NewsReporter : MonoBehaviour {
 		{
 			Instantiate(largeBlood, transform.position, Quaternion.identity);
 			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
+			Instantiate(corpse, transform.position, Quaternion.identity);
 			SoundManager.instance.PlayOnceAltered(1);
 			Destroy(gameObject);
 		}

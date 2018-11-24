@@ -5,8 +5,8 @@ using UnityEngine;
 public class Slide : MonoBehaviour {
 
 	private SpriteRenderer sr;
-	public float speed;
-	public float friction;
+	private float speed = 200f;
+	private float friction = 4f;
 
 	private Vector2 direction;
 
@@ -27,7 +27,9 @@ public class Slide : MonoBehaviour {
 
 		transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
 
-		sr.sortingOrder = Mathf.RoundToInt(transform.position.y) * -1;
+		sr.sortingOrder = (Mathf.RoundToInt(transform.position.y) + 10) * -1;
+
+		Debug.Log(sr.sortingOrder);
 
 		if (speed <= 0f)
 		{

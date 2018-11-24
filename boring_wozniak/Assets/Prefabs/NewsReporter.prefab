@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95415280850968554}
   - component: {fileID: 114691148637124642}
   - component: {fileID: 61359582965642026}
+  - component: {fileID: 50944814191615634}
   m_Layer: 8
   m_Name: NewsReporter
   m_TagString: Enemy
@@ -43,6 +44,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50944814191615634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1137431721311882}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!61 &61359582965642026
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -101,6 +122,8 @@ MonoBehaviour:
   largeBlood: {fileID: 1316406302313918, guid: a2260cca20073c84b85a1b32174d9d0a, type: 2}
   screenShakeSmall: {fileID: 1205020989683202, guid: 1e52c452be8284f43a4d45d1dfdbc988,
     type: 2}
+  corpse: {fileID: 1816876531573530, guid: f655c795fcfddc54486c0cc1f0c74847, type: 2}
+  speed: 35
   hitPoints: 0
 --- !u!212 &212065085282669796
 SpriteRenderer:

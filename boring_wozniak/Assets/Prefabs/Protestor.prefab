@@ -101,6 +101,7 @@ MonoBehaviour:
   largeBlood: {fileID: 1316406302313918, guid: a2260cca20073c84b85a1b32174d9d0a, type: 2}
   screenShakeSmall: {fileID: 1205020989683202, guid: 1e52c452be8284f43a4d45d1dfdbc988,
     type: 2}
+  corpse: {fileID: 1964473094588704, guid: c7dd0d35a1ec2b44c9cc5d48a11070a2, type: 2}
   hitPoints: 0
 --- !u!212 &212685605516608918
 SpriteRenderer:

@@ -84,6 +84,7 @@ public class Trump : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
+				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
 				newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
 				newBullet.gameObject.GetComponent<Bullet>().damage = damage;

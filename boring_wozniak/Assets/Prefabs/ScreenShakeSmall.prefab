@@ -51,5 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb83c49426c49c14cb8548a38c31c32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 2
+  intensity: 3
   time: 0.25
