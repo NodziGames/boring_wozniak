@@ -70,6 +70,7 @@ public class Protestor : Enemy {
 	void ThrowRock()
 	{
 		Instantiate(rock, transform.position, Quaternion.identity);
+		SoundManager.instance.PlayOnceAltered(3);
 		Invoke("ThrowRock", throwTime + Random.Range(-1f, 1f));
 	}
 }

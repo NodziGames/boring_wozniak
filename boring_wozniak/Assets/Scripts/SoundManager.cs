@@ -7,12 +7,15 @@ public class SoundManager : MonoBehaviour {
 	// Use this for initialization
 	public AudioClip[] clips;
 
+	public AudioClip[] voiceLines;
+
 	private AudioSource sfx;
 
 	public static SoundManager instance;
 
 	void Awake()
 	{
+		Invoke("PlayVoiceLine", 1f);
 		if (instance == null)
 			instance = this;
 		else if (instance != this)
@@ -35,5 +38,17 @@ public class SoundManager : MonoBehaviour {
 
 		//Play the clip.
 		sfx.PlayOneShot(sfx.clip);
+	}
+
+	public void PlayVoiceLine()
+	{
+		if (GameObject.Find("Trump"))
+		{
+			sfx.pitch = 1f;
+
+			sfx.clip = voiceLines[Random.Range(0, 35)];
+			sfx.PlayOneShot(sfx.clip);
+			Invoke("PlayVoiceLine", 5f);
+		}
 	}
 }
