@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	protected SpriteRenderer sr;
-	[SerializeField]
 	protected float dropPercentage = 0;
 
 	public GameObject smallBlood;
@@ -13,13 +12,15 @@ public class Enemy : MonoBehaviour {
 	public GameObject screenShakeSmall;
 	public GameObject corpse;
 	public GameObject[] powerup;
+	protected Animator anim;
 
 	public int hitPoints;
 
 
 	// Use this for initialization
 	void Start () {
-		
+		sr = GetComponent<SpriteRenderer>();
+		anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame

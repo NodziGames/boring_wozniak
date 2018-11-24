@@ -5,12 +5,7 @@ using UnityEngine;
 public class Journalist : Enemy {
 
 	// Use this for initialization
-	
-	void Start () {
 
-		sr = GetComponent<SpriteRenderer>();
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

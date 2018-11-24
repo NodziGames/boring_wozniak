@@ -5,26 +5,9 @@ using UnityEngine;
 public class NewsReporter : Enemy {
 
 	// Use this for initialization
-	private SpriteRenderer sr;
-
-	public GameObject smallBlood;
-	public GameObject largeBlood;
-	public GameObject screenShakeSmall;
-	public GameObject corpse;
 	public float speed;
-
-	private Animator anim;
-
 	private Vector2 direction;
 
-
-	void Start () {
-
-		sr = GetComponent<SpriteRenderer>();
-		anim = GetComponent<Animator>();
-		
-	}
-	
 	// Update is called once per frame
 	void Update () {
 

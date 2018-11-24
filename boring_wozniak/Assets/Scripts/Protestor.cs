@@ -2,24 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Protestor : MonoBehaviour {
+public class Protestor : Enemy {
 
 	// Use this for initialization
-	private SpriteRenderer sr;
-
-	public GameObject smallBlood;
-	public GameObject largeBlood;
-	public GameObject screenShakeSmall;
-	public GameObject corpse;
-
-	public int hitPoints;
-
-
-	void Start () {
-
-		sr = GetComponent<SpriteRenderer>();
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {
