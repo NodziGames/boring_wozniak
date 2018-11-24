@@ -22,6 +22,7 @@ public class Trump : MonoBehaviour {
 	public float fireRate;
 	public float accuracy;
 	public bool doubleShot;
+	public int damage;
 
 	private bool shotReady;
 	
@@ -77,6 +78,7 @@ public class Trump : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy;
+				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
 			}
 			else
 			{
@@ -84,6 +86,7 @@ public class Trump : MonoBehaviour {
 				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
 				newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
+				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
 			}
 			
 			SoundManager.instance.PlayOnceAltered(0);

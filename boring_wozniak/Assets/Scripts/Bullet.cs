@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour {
 	public GameObject flash;
 	private Vector3 lastPosition;
 	public float accuracy;
+	public int damage;
 
 	// Use this for initialization
 	void Start () {
@@ -47,10 +48,23 @@ public class Bullet : MonoBehaviour {
 
 			if (hit.collider.tag == "Enemy")
 			{
-				Debug.Log("Ouch Fuck!");
 				Instantiate(explosion, lastPosition, Quaternion.identity);
 				Destroy(gameObject);
 
+				Debug.Log(hit.collider.name);
+
+				switch (hit.collider.name)
+				{
+					case "Journalist(Clone)":
+						hit.collider.gameObject.GetComponent<Journalist>().TakeDamage(damage);
+						break;
+					case "Protestor(Clone)":
+						hit.collider.gameObject.GetComponent<Protestor>().TakeDamage(damage);
+						break;
+					case "NewsReporter(Clone)":
+						hit.collider.gameObject.GetComponent<NewsReporter>().TakeDamage(damage);
+						break;
+				}
 			}
 		}
 
