@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +17,6 @@ public class CameraControl : MonoBehaviour {
 		Vector3 temp_trump = GameManager.instance.trump.transform.position;
 
 		Vector2 cursorPos = GameManager.instance.trump.GetComponent<Trump>().cursorPos;
-
 
 		transform.position = Vector3.Lerp(transform.position, new Vector3(temp_trump.x - (((temp_trump.x - cursorPos.x) / 2) * offsetAmount), temp_trump.y - (((temp_trump.y - cursorPos.y) / 2) * (offsetAmount * 1.77f)), -10f), 0.1f);
 	}

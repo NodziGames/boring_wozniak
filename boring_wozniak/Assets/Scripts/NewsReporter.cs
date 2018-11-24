@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewsReporter : MonoBehaviour {
+public class NewsReporter : Enemy {
 
 	// Use this for initialization
 	private SpriteRenderer sr;
@@ -14,8 +14,6 @@ public class NewsReporter : MonoBehaviour {
 	public float speed;
 
 	private Vector2 direction;
-
-	public int hitPoints;
 
 
 	void Start () {
@@ -46,27 +44,4 @@ public class NewsReporter : MonoBehaviour {
 		sr.sortingOrder = Mathf.RoundToInt(transform.position.y) * -1;
 	}
 
-	public void TakeDamage(int damage)
-	{
-		hitPoints -= damage;
-
-		Instantiate(smallBlood, transform.position, Quaternion.identity);
-
-		sr.enabled = false;
-		Invoke("TurnRendererOnAgain", 0.05f);
-
-		if (hitPoints <= 0)
-		{
-			Instantiate(largeBlood, transform.position, Quaternion.identity);
-			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
-			Instantiate(corpse, transform.position, Quaternion.identity);
-			SoundManager.instance.PlayOnceAltered(1);
-			Destroy(gameObject);
-		}
-	}
-
-	void TurnRendererOnAgain()
-	{
-		sr.enabled = true;
-	}
 }
