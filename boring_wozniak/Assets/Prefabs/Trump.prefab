@@ -154,7 +154,11 @@ MonoBehaviour:
   deporterSr: {fileID: 0}
   direction: {x: 0, y: 0}
   bullet: {fileID: 1363510198492064, guid: f4fb6be63c8138d409723af9c401f338, type: 2}
+  corpse: {fileID: 1411163690729024, guid: 0379fec1b472fe24f8b0faf4c6cd74aa, type: 2}
   fireRate: 0.2
+  accuracy: 8
+  doubleShot: 1
+  damage: 10
 --- !u!212 &212193342697415592
 SpriteRenderer:
   m_ObjectHideFlags: 1

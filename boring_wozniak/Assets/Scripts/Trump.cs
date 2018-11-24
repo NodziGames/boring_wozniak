@@ -17,6 +17,7 @@ public class Trump : MonoBehaviour {
 	public SpriteRenderer deporterSr;
 	public Vector2 direction;
 	public GameObject bullet;
+	public GameObject corpse;
 
 	//Gun stuff
 	public float fireRate;
@@ -77,17 +78,20 @@ public class Trump : MonoBehaviour {
 			if (doubleShot == false)
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
-				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy;
-				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
+				Bullet component = newBullet.GetComponent<Bullet>();
+				component.accuracy = accuracy;
+				component.damage = damage;
 			}
 			else
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
-				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
-				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
+				Bullet component = newBullet.GetComponent<Bullet>();
+				component.accuracy = accuracy * 2;
+				component.damage = damage;
 				newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
-				newBullet.gameObject.GetComponent<Bullet>().accuracy = accuracy * 2;
-				newBullet.gameObject.GetComponent<Bullet>().damage = damage;
+				component = newBullet.GetComponent<Bullet>();
+				component.accuracy = accuracy * 2;
+				component.damage = damage;
 			}
 			
 			SoundManager.instance.PlayOnceAltered(0);
@@ -157,7 +161,8 @@ public class Trump : MonoBehaviour {
 	{
 		if (collision.transform.tag == "Enemy")
 		{
-			Debug.Log("You ded bitch");
+			Instantiate(corpse, transform.position, Quaternion.identity);
+			Destroy(gameObject);
 		}
 	}
 }

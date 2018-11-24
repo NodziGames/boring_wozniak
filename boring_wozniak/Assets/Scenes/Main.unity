@@ -533,23 +533,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
         type: 2}
-      propertyPath: accuracy
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
-        type: 2}
       propertyPath: fireRate
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
-        type: 2}
-      propertyPath: damage
-      value: 10
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
         type: 2}
       propertyPath: doubleShot
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 887d8c8b91eb1c5468f478837884a7ed, type: 2}
