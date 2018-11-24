@@ -6,6 +6,7 @@ using UnityEngine;
 public class SlideTrump : MonoBehaviour {
 
 	private SpriteRenderer sr;
+	public GameObject fadeIn;
 	private float speed = 100f;
 	private float friction = 4f;
 
@@ -39,6 +40,7 @@ public class SlideTrump : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Space) && Trump.isDead) {
 			Trump.isDead = false;
+			Instantiate(fadeIn, new Vector3(0f, 0f, 0f), Quaternion.identity, Camera.main.transform);
 			Invoke("invokeSceneChange", 1.0f);
 		}
 
