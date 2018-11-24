@@ -18,6 +18,8 @@ public class Trump : MonoBehaviour {
 	public Vector2 direction;
 	public GameObject bullet;
 	public GameObject corpse;
+	public GameObject bloodLarge;
+	public GameObject screenShakeLarge;
 
 	//Gun stuff
 	public float fireRate;
@@ -162,6 +164,8 @@ public class Trump : MonoBehaviour {
 		if (collision.transform.tag == "Enemy")
 		{
 			Instantiate(corpse, transform.position, Quaternion.identity);
+			Instantiate(bloodLarge, transform.position, Quaternion.identity);
+			Instantiate(screenShakeLarge, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
 	}

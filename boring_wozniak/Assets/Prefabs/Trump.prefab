@@ -155,7 +155,10 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   bullet: {fileID: 1363510198492064, guid: f4fb6be63c8138d409723af9c401f338, type: 2}
   corpse: {fileID: 1411163690729024, guid: 0379fec1b472fe24f8b0faf4c6cd74aa, type: 2}
-  fireRate: 0.2
+  bloodLarge: {fileID: 1316406302313918, guid: a2260cca20073c84b85a1b32174d9d0a, type: 2}
+  screenShakeLarge: {fileID: 1869585926542428, guid: 94ef1591fa49d8d4b8987275c044cad7,
+    type: 2}
+  fireRate: 0.15
   accuracy: 8
   doubleShot: 1
   damage: 10
