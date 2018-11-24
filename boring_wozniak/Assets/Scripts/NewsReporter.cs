@@ -32,6 +32,15 @@ public class NewsReporter : MonoBehaviour {
 		direction.Normalize();
 		transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
 
+		if (direction.x < 0)
+		{
+			sr.flipX = true;
+		}
+		else
+		{
+			sr.flipX = false;
+		}
+
 
 		//Update rendering depth
 		sr.sortingOrder = Mathf.RoundToInt(transform.position.y) * -1;
