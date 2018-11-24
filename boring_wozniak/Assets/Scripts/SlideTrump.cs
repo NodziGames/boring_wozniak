@@ -10,6 +10,7 @@ public class SlideTrump : MonoBehaviour {
 	private float friction = 4f;
 
 	private Vector2 direction;
+	private GameObject[] boundaries;
 
 	// Use this for initialization
 	void Start()
@@ -17,6 +18,7 @@ public class SlideTrump : MonoBehaviour {
 
 		sr = GetComponent<SpriteRenderer>();
 
+		boundaries = GameManager.instance.GetComponent<GameManager>().boundaries;
 		direction = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
 		direction.Normalize();
 
@@ -44,6 +46,8 @@ public class SlideTrump : MonoBehaviour {
 
 		transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
 
+		transform.position = new Vector2(Mathf.Clamp(transform.position.x, boundaries[(int)e_Boundaries.LEFT].transform.position.x, boundaries[(int)e_Boundaries.RIGHT].transform.position.x),
+			Mathf.Clamp(transform.position.y, boundaries[(int)e_Boundaries.DOWN].transform.position.y, boundaries[(int)e_Boundaries.UP].transform.position.y));
 		sr.sortingOrder = (Mathf.RoundToInt(transform.position.y) + 12) * -1;
 
 		if (speed <= 0f)

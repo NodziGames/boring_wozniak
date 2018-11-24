@@ -39,23 +39,8 @@ public class Journalist : Enemy {
 		anim.SetBool("running", moving);
 
 		//Manage boundares
-		if (transform.position.x > boundaries[0].transform.position.x)
-		{
-			transform.position = new Vector2(boundaries[0].transform.position.x, transform.position.y);
-		}
-		else if (transform.position.x < boundaries[2].transform.position.x)
-		{
-			transform.position = new Vector2(boundaries[2].transform.position.x, transform.position.y);
-		}
-
-		if (transform.position.y < boundaries[1].transform.position.y)
-		{
-			transform.position = new Vector2(transform.position.x, boundaries[1].transform.position.y);
-		}
-		else if (transform.position.y > boundaries[3].transform.position.y)
-		{
-			transform.position = new Vector2(transform.position.x, boundaries[3].transform.position.y);
-		}
+		transform.position = new Vector2(Mathf.Clamp(transform.position.x, boundaries[(int)e_Boundaries.LEFT].transform.position.x, boundaries[(int)e_Boundaries.RIGHT].transform.position.x),
+			Mathf.Clamp(transform.position.y, boundaries[(int)e_Boundaries.DOWN].transform.position.y, boundaries[(int)e_Boundaries.UP].transform.position.y));
 
 		if (GameObject.Find("Trump"))
 		{
