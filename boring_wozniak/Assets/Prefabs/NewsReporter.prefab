@@ -123,8 +123,9 @@ MonoBehaviour:
   screenShakeSmall: {fileID: 1205020989683202, guid: 1e52c452be8284f43a4d45d1dfdbc988,
     type: 2}
   corpse: {fileID: 1816876531573530, guid: f655c795fcfddc54486c0cc1f0c74847, type: 2}
-  speed: 35
+  powerup: []
   hitPoints: 0
+  speed: 45
 --- !u!212 &212065085282669796
 SpriteRenderer:
   m_ObjectHideFlags: 1
