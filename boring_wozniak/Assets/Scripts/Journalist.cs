@@ -22,7 +22,7 @@ public class Journalist : Enemy {
 	{
 		sr = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
-		Invoke("StartMoving", Random.Range(waitTime - 1f, waitTime + 1f));
+		Invoke("StartMoving", 0f);
 		Invoke("StunStart", stunWait);
 	}
 	void Update () {

@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour {
 
 	private AudioSource sfx;
 
+	private AudioSource sfx2;
+
 	public static SoundManager instance;
 
 	void Awake()
@@ -25,7 +27,9 @@ public class SoundManager : MonoBehaviour {
 
 	public void Start()
 	{
-		sfx = GetComponent<AudioSource>();
+		AudioSource[] sources = GetComponents<AudioSource>();
+		sfx = sources[0];
+		sfx2 = sources[1];
 	}
 
 	public void PlayOnceAltered(int clip)
@@ -44,11 +48,20 @@ public class SoundManager : MonoBehaviour {
 	{
 		if (GameObject.Find("Trump"))
 		{
-			sfx.pitch = 1f;
+			sfx2.pitch = 1f;
 
-			sfx.clip = voiceLines[Random.Range(0, 35)];
-			sfx.PlayOneShot(sfx.clip);
+			sfx2.clip = voiceLines[Random.Range(0, 35)];
+			sfx2.PlayOneShot(sfx2.clip);
 			Invoke("PlayVoiceLine", 20f);
 		}
+	}
+
+	public void PlayOnce(int clip)
+	{
+		sfx2.pitch = 1f;
+
+		sfx2.clip = clips[clip];
+
+		sfx2.PlayOneShot(sfx2.clip);
 	}
 }

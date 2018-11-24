@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
 	void NextWave()
 	{
 		//Tiane (Next wave effect GUI)
-		SoundManager.instance.PlayOnceAltered(5);
+		SoundManager.instance.PlayOnce(5);
 		wave += 1;
 		Invoke("NextWave", waveLength);
 	}
