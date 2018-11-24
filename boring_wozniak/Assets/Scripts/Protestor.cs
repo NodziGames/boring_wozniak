@@ -13,6 +13,8 @@ public class Protestor : Enemy {
 	private bool moving = false;
 	public GameObject rock;
 
+	private GameObject[] boundaries;
+
 	// Update is called once per frame
 	void Awake() { 
 		this.score = 8;
@@ -23,6 +25,8 @@ public class Protestor : Enemy {
 		anim = GetComponent<Animator>();
 		Invoke("StartMoving", 0f);
 		Invoke("ThrowRock", throwTime + Random.Range(-1f, 1f));
+
+		boundaries = GameManager.instance.GetComponent<GameManager>().boundaries;
 	}
 
 	void Update () {
@@ -30,6 +34,25 @@ public class Protestor : Enemy {
 		if (moving)
 		{
 			transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
+		}
+
+		//Manage boundares
+		if (transform.position.x > boundaries[0].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[0].transform.position.x, transform.position.y);
+		}
+		else if (transform.position.x < boundaries[2].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[2].transform.position.x, transform.position.y);
+		}
+
+		if (transform.position.y < boundaries[1].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[1].transform.position.y);
+		}
+		else if (transform.position.y > boundaries[3].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[3].transform.position.y);
 		}
 
 		anim.SetBool("running", moving);

@@ -14,6 +14,8 @@ public class Journalist : Enemy {
 	private Vector2 direction;
 	private bool moving = false;
 
+	private GameObject[] boundaries;
+
 	// Update is called once per frame
 	void Awake() {
 		score = 10;
@@ -24,6 +26,7 @@ public class Journalist : Enemy {
 		anim = GetComponent<Animator>();
 		Invoke("StartMoving", 0f);
 		Invoke("StunStart", stunWait);
+		boundaries = GameManager.instance.GetComponent<GameManager>().boundaries;
 	}
 	void Update () {
 
@@ -33,6 +36,25 @@ public class Journalist : Enemy {
 		}
 
 		anim.SetBool("running", moving);
+
+		//Manage boundares
+		if (transform.position.x > boundaries[0].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[0].transform.position.x, transform.position.y);
+		}
+		else if (transform.position.x < boundaries[2].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[2].transform.position.x, transform.position.y);
+		}
+
+		if (transform.position.y < boundaries[1].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[1].transform.position.y);
+		}
+		else if (transform.position.y > boundaries[3].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[3].transform.position.y);
+		}
 
 		if (GameObject.Find("Trump"))
 		{

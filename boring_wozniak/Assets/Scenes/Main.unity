@@ -371,6 +371,11 @@ MonoBehaviour:
   portal: {fileID: 1278547211413132, guid: 65987aea7d7dd7e468646da6bcceac0e, type: 2}
   spawnTime: 5
   spawnHP: 40
+  boundaries:
+  - {fileID: 1788323250}
+  - {fileID: 947078105}
+  - {fileID: 439528936}
+  - {fileID: 274125619}
   score: 0
   wave: 1
   waveLength: 5

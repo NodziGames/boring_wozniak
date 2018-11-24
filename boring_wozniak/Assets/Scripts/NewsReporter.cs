@@ -7,9 +7,12 @@ public class NewsReporter : Enemy {
 	public float speed;
 	private Vector2 direction;
 
+	private GameObject[] boundaries;
+
 	// Update is called once per frame
 	void Awake() {
 		score = 5;
+		boundaries = GameManager.instance.GetComponent<GameManager>().boundaries;
 	}
 	void Update () {
 
@@ -23,6 +26,25 @@ public class NewsReporter : Enemy {
 		}
 		else
 			anim.SetBool("moving", false);
+
+		//Manage boundares
+		if (transform.position.x > boundaries[0].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[0].transform.position.x, transform.position.y);
+		}
+		else if (transform.position.x < boundaries[2].transform.position.x)
+		{
+			transform.position = new Vector2(boundaries[2].transform.position.x, transform.position.y);
+		}
+
+		if (transform.position.y < boundaries[1].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[1].transform.position.y);
+		}
+		else if (transform.position.y > boundaries[3].transform.position.y)
+		{
+			transform.position = new Vector2(transform.position.x, boundaries[3].transform.position.y);
+		}
 
 		if (direction.x < 0)
 		{

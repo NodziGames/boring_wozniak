@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject portal;
 	public float spawnTime;
 	public int spawnHP;
+	public GameObject[] boundaries;
 
 	//Tiane (Draw out score on GUI)
 	public int score;
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour {
 	{
 		if (GameObject.Find("Trump"))
 		{
-			GameObject newPortal = Instantiate(portal, new Vector3(0f, 0f, 0f), Quaternion.identity);
+			GameObject newPortal = Instantiate(portal, new Vector3(Random.Range(boundaries[2].transform.position.x, boundaries[0].transform.position.x), Random.Range(boundaries[1].transform.position.y, boundaries[3].transform.position.y), 0f), Quaternion.identity);
 			Portal portalComponent = newPortal.GetComponent<Portal>();
 			portalComponent.enemyHp = spawnHP + (wave * 5);
 			Invoke("SpawnEnemy", Mathf.Max(spawnTime - (wave / 2), 2));
