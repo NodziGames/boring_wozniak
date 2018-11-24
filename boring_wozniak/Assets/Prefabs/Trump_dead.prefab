@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4080709471831654}
   - component: {fileID: 212222486890418264}
-  - component: {fileID: 114521124503780474}
+  - component: {fileID: 114064957425443392}
   m_Layer: 0
   m_Name: Trump_dead
   m_TagString: Untagged
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114521124503780474
+--- !u!114 &114064957425443392
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1411163690729024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8137007c46666814ca4053b8e34e2630, type: 3}
+  m_Script: {fileID: 11500000, guid: 5085795d16537184db10983d1d881f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212222486890418264

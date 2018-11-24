@@ -14,11 +14,15 @@ public class CameraControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		Vector3 temp_trump = GameManager.instance.trump.transform.position;
+		if (GameObject.Find("Trump"))
+		{
+			Vector3 temp_trump = GameManager.instance.trump.transform.position;
 
-		Vector2 cursorPos = GameManager.instance.trump.GetComponent<Trump>().cursorPos;
+			Vector2 cursorPos = GameManager.instance.trump.GetComponent<Trump>().cursorPos;
 
-		transform.position = Vector3.Lerp(transform.position, new Vector3(temp_trump.x - (((temp_trump.x - cursorPos.x) / 2) * offsetAmount), temp_trump.y - (((temp_trump.y - cursorPos.y) / 2) * (offsetAmount * 1.77f)), -10f), 0.1f);
+
+			transform.position = Vector3.Lerp(transform.position, new Vector3(temp_trump.x - (((temp_trump.x - cursorPos.x) / 2) * offsetAmount), temp_trump.y - (((temp_trump.y - cursorPos.y) / 2) * (offsetAmount * 1.77f)), -10f), 0.1f);
+		}
 	}
 
 	public void GunKick(float amount)

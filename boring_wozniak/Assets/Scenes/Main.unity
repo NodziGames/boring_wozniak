@@ -384,6 +384,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 6b86dc218c885294f9b73d2df8f1e5e4, type: 3}
   - {fileID: 8300000, guid: 52096298a273fe74d97277b7771f13ee, type: 3}
+  - {fileID: 8300000, guid: 7bb3ec52242db374aaa7f3d98a9ab53f, type: 3}
 --- !u!82 &517425611
 AudioSource:
   m_ObjectHideFlags: 0
@@ -530,16 +531,6 @@ Prefab:
     - target: {fileID: 4569906413578136, guid: 887d8c8b91eb1c5468f478837884a7ed, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
-        type: 2}
-      propertyPath: fireRate
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114837616395623982, guid: 887d8c8b91eb1c5468f478837884a7ed,
-        type: 2}
-      propertyPath: doubleShot
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 887d8c8b91eb1c5468f478837884a7ed, type: 2}
