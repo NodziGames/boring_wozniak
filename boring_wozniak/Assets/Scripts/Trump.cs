@@ -187,7 +187,7 @@ public class Trump : MonoBehaviour {
 	}
 
 	private void handlePowerups(Powerup powerup) {
-		if (powerup.name == e_Powerups.DMG) {
+		if (powerup.name == e_Powerups.DMG + "(Clone)") {
 			this.damage *= 2;
 			Invoke("invokePowerDMGRevert", powerup.duration);
 		}
