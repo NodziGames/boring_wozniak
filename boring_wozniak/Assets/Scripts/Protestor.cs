@@ -49,8 +49,6 @@ public class Protestor : Enemy {
 		//Update rendering depth
 		sr.sortingOrder = Mathf.RoundToInt(transform.position.y) * -1;
 	}
-<<<<<<< HEAD
-=======
 
 	void TurnRendererOnAgain()
 	{
@@ -78,5 +76,4 @@ public class Protestor : Enemy {
 		SoundManager.instance.PlayOnceAltered(3);
 		Invoke("ThrowRock", throwTime + Random.Range(-1f, 1f));
 	}
->>>>>>> 7b048e7873fa0253c68562e860fe9b302748297a
 }
