@@ -177,6 +177,14 @@ public class Trump : MonoBehaviour {
 			Instantiate(screenShakeLarge, transform.position, Quaternion.identity);
 			SoundManager.instance.PlayOnceAltered(2);
 			isDead = true;
+
+			//Manage Highscore
+			if (GameManager.instance.GetComponent<GameManager>().score > PlayerPrefs.GetInt("highscore", 0))
+			{
+				PlayerPrefs.SetInt("highscore", GameManager.instance.GetComponent<GameManager>().score);
+				Debug.Log("NEW HIGHSCORE!");
+			}
+
 			Destroy(gameObject);
 		}
 
