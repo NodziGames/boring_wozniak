@@ -166,6 +166,7 @@ public class Trump : MonoBehaviour {
 			Instantiate(corpse, transform.position, Quaternion.identity);
 			Instantiate(bloodLarge, transform.position, Quaternion.identity);
 			Instantiate(screenShakeLarge, transform.position, Quaternion.identity);
+			SoundManager.instance.PlayOnceAltered(2);
 			Destroy(gameObject);
 		}
 	}
