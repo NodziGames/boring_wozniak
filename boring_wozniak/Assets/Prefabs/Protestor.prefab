@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5e3199cc5d93fd42b552ef8b38151a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropPercentage: 100
+  dropPercentage: 5
   smallBlood: {fileID: 1633528581389086, guid: f33550693fb09d64cbf627118d92f328, type: 2}
   largeBlood: {fileID: 1316406302313918, guid: a2260cca20073c84b85a1b32174d9d0a, type: 2}
   screenShakeSmall: {fileID: 1205020989683202, guid: 1e52c452be8284f43a4d45d1dfdbc988,
