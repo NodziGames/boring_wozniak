@@ -41,6 +41,7 @@ public class NewsReporter : MonoBehaviour {
 		{
 			Instantiate(largeBlood, transform.position, Quaternion.identity);
 			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
+			SoundManager.instance.PlayOnceAltered(1);
 			Destroy(gameObject);
 		}
 	}
