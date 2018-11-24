@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 		{
 			GameObject newPortal = Instantiate(portal, new Vector3(Random.Range(boundaries[2].transform.position.x, boundaries[0].transform.position.x), Random.Range(boundaries[1].transform.position.y, boundaries[3].transform.position.y), 0f), Quaternion.identity);
 			Portal portalComponent = newPortal.GetComponent<Portal>();
-			portalComponent.enemyHp = spawnHP + (wave * 5);
+			portalComponent.enemyHp = spawnHP + (wave * 3);
 			Invoke("SpawnEnemy", Mathf.Max(spawnTime - (wave / 2), 2));
 		}
 	}

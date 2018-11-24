@@ -15,8 +15,20 @@ public class Portal : MonoBehaviour {
 	
 	void SpawnEnemy()
 	{
-		GameObject enemy = enemies[Random.Range(0, enemies.Length)];
+		GameObject[] journalists = GameObject.FindGameObjectsWithTag("Journalist");
+		GameObject enemy;
+
+		if (journalists.Length < 2)
+		{
+			enemy = enemies[Random.Range(0, enemies.Length)];
+		}
+		else
+		{
+			enemy = enemies[Random.Range(0, enemies.Length - 1)];
+		}
+
 		GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+ 
 
 		switch(newEnemy.gameObject.name)
 		{

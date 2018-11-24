@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour {
 				Destroy(gameObject);
 			}
 
-			if (hit.collider.tag == "Enemy")
+			if (hit.collider.tag == "Enemy" || hit.collider.tag == "Journalist")
 			{
 				Instantiate(explosion, lastPosition, Quaternion.identity);
 				Destroy(gameObject);

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61975521999168370}
   m_Layer: 8
   m_Name: Journalist
-  m_TagString: Enemy
+  m_TagString: Journalist
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +111,7 @@ MonoBehaviour:
   hitPoints: 0
   stun: {fileID: 1802808017198910, guid: 145f80b12687bca4099cadb3ade11d6a, type: 2}
   speed: 25
+  charge: {fileID: 1054971084912968, guid: 4f82a091fc6b8f54594564ac1f425431, type: 2}
 --- !u!212 &212788866179161076
 SpriteRenderer:
   m_ObjectHideFlags: 1
