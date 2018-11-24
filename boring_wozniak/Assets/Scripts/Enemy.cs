@@ -5,7 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
 	protected SpriteRenderer sr;
-	protected float dropPercentage = 0;
+	protected int score;
+	[SerializeField]
+	protected float dropPercentage = 100;
 
 	public GameObject smallBlood;
 	public GameObject largeBlood;
@@ -15,11 +17,13 @@ public class Enemy : MonoBehaviour {
 	protected Animator anim;
 
 	public int hitPoints;
+	protected GameManager gameManager;
 
 
 	// Use this for initialization
 	void Start () {
 		sr = GetComponent<SpriteRenderer>();
+		gameManager = GameManager.instance.GetComponent<GameManager>();
 		anim = GetComponent<Animator>();
 	}
 	
@@ -44,6 +48,7 @@ public class Enemy : MonoBehaviour {
 			Instantiate(largeBlood, transform.position, Quaternion.identity);
 			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
 			Instantiate(corpse, transform.position, Quaternion.identity);
+			gameManager.score += this.score;
 			SoundManager.instance.PlayOnceAltered(1);
 			Destroy(gameObject);
 		}

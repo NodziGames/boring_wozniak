@@ -8,6 +8,9 @@ public class Journalist : Enemy {
 
 	
 	// Update is called once per frame
+	void Awake() {
+		score = 10;
+	}
 	void Update () {
 
 

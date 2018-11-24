@@ -8,6 +8,9 @@ public class NewsReporter : Enemy {
 	private Vector2 direction;
 
 	// Update is called once per frame
+	void Awake() {
+		score = 5;
+	}
 	void Update () {
 
 		//FollowPlayer

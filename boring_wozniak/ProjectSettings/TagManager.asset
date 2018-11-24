@@ -6,6 +6,8 @@ TagManager:
   tags:
   - HitBox
   - Enemy
+  - Trump
+  - Powerup
   layers:
   - Default
   - TransparentFX

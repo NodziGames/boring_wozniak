@@ -118,13 +118,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d03b22ed77ff64fa9f5e8333c70ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPercentage: 100
   smallBlood: {fileID: 1633528581389086, guid: f33550693fb09d64cbf627118d92f328, type: 2}
   largeBlood: {fileID: 1316406302313918, guid: a2260cca20073c84b85a1b32174d9d0a, type: 2}
   screenShakeSmall: {fileID: 1205020989683202, guid: 1e52c452be8284f43a4d45d1dfdbc988,
     type: 2}
   corpse: {fileID: 1816876531573530, guid: f655c795fcfddc54486c0cc1f0c74847, type: 2}
-  speed: 35
+  powerup:
+  - {fileID: 1766234015781632, guid: 91fe4de32ca376a48b25f33ed5f16372, type: 2}
+  - {fileID: 1157388428762492, guid: c0e9997161f7e5b4bb8aa1496de7840b, type: 2}
+  - {fileID: 1455921623703032, guid: 59a566efd53a4a3439b8966693b0e589, type: 2}
+  - {fileID: 1092434551636512, guid: cec1a3c0261984641b72c0ba8b089c4d, type: 2}
   hitPoints: 0
+  speed: 35
 --- !u!212 &212065085282669796
 SpriteRenderer:
   m_ObjectHideFlags: 1

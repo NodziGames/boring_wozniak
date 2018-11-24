@@ -160,7 +160,7 @@ MonoBehaviour:
     type: 2}
   fireRate: 0.15
   accuracy: 8
-  doubleShot: 1
+  doubleShot: 0
   damage: 10
 --- !u!212 &212193342697415592
 SpriteRenderer:

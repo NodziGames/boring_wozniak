@@ -26,6 +26,10 @@ public class Trump : MonoBehaviour {
 	public float accuracy;
 	public bool doubleShot;
 	public int damage;
+	
+	private int baseDamage;
+	private float baseMvSpeed;
+	private float baseFireRate;
 
 	private bool shotReady;
 	
@@ -38,6 +42,9 @@ public class Trump : MonoBehaviour {
 		deporterSr = deporter.gameObject.GetComponent<SpriteRenderer>();
 		rb = GetComponent<Rigidbody2D>();
 		shotReady = true;
+		baseDamage = damage;
+		baseFireRate = fireRate;
+		baseMvSpeed = speed;
 	}
 	
 	// Update is called once per frame
@@ -169,5 +176,51 @@ public class Trump : MonoBehaviour {
 			SoundManager.instance.PlayOnceAltered(2);
 			Destroy(gameObject);
 		}
+
+		if (collision.transform.tag == "Powerup") {
+			Powerup powerupGO = collision.transform.gameObject.GetComponent<Powerup>();
+			Debug.Log(powerupGO);
+			handlePowerups(powerupGO);
+			Destroy(powerupGO.gameObject);
+			
+		}
 	}
+
+	private void handlePowerups(Powerup powerup) {
+		if (powerup.name == e_Powerups.DMG) {
+			this.damage *= 2;
+			Invoke("invokePowerDMGRevert", powerup.duration);
+		}
+		else if (powerup.name == e_Powerups.DBL_SHOT + "(Clone)") {
+			this.doubleShot = true;
+			Invoke("invokePowerDBLShotRevert", powerup.duration);
+		}
+		else if (powerup.name == e_Powerups.FIRE_RATE + "(Clone)") { 
+			this.fireRate /= 2;
+			Invoke("invokePowerFireRateRevert", powerup.duration);
+		}
+		else if (powerup.name == e_Powerups.MOVEMENT + "(Clone)") {
+			int multiplier = 2;
+			if (this.baseMvSpeed <= this.speed * multiplier)
+				this.speed *= multiplier;
+			Invoke("invokePowerMovementRevert", powerup.duration);
+		}
+	}
+	
+	private void invokePowerDMGRevert() {
+		this.damage = baseDamage;
+	}
+
+	private void invokePowerDBLShotRevert() {
+		this.doubleShot = false;
+	}
+
+	private void invokePowerFireRateRevert() {
+		this.fireRate = baseFireRate;
+	}
+
+	private void invokePowerMovementRevert() {
+		this.speed = baseMvSpeed;
+	}
+
 }
