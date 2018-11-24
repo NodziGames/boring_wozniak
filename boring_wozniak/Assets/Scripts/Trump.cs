@@ -187,6 +187,7 @@ public class Trump : MonoBehaviour {
 	}
 
 	private void handlePowerups(Powerup powerup) {
+		SoundManager.instance.PlayOnceAltered(6);
 		if (powerup.name == e_Powerups.DMG + "(Clone)") {
 			this.damage *= 2;
 			Invoke("invokePowerDMGRevert", powerup.duration);
