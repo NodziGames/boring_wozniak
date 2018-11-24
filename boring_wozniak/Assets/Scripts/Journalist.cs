@@ -65,8 +65,11 @@ public class Journalist : Enemy {
 
 	void StunStart()
 	{
-		Invoke("Stun", 1.2f);
-		SoundManager.instance.PlayOnceAltered(4);
+		if (GameObject.Find("Trump"))
+		{
+			Invoke("Stun", 1.2f);
+			SoundManager.instance.PlayOnceAltered(4);
+		}
 	}
 
 	void Stun()
