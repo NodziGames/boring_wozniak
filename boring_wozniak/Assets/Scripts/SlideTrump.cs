@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SlideTrump : MonoBehaviour {
@@ -34,6 +35,11 @@ public class SlideTrump : MonoBehaviour {
 	void Update()
 	{
 
+		if (Input.GetKeyDown(KeyCode.Space) && Trump.isDead) {
+			Trump.isDead = false;
+			Invoke("invokeSceneChange", 1.0f);
+		}
+
 		speed -= friction;
 
 		transform.position = new Vector2(transform.position.x + (direction.x * speed * Time.deltaTime), transform.position.y + (direction.y * speed * Time.deltaTime));
@@ -49,5 +55,9 @@ public class SlideTrump : MonoBehaviour {
 			}
 		}
 
+	}
+
+	void invokeSceneChange() {
+		SceneManager.LoadScene("Main");
 	}
 }

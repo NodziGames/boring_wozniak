@@ -26,6 +26,7 @@ public class Trump : MonoBehaviour {
 	public float accuracy;
 	public bool doubleShot;
 	public int damage;
+	public static bool isDead;
 	
 	private int baseDamage;
 	private float baseMvSpeed;
@@ -45,6 +46,7 @@ public class Trump : MonoBehaviour {
 		baseDamage = damage;
 		baseFireRate = fireRate;
 		baseMvSpeed = speed;
+		isDead = false;
 	}
 	
 	// Update is called once per frame
@@ -174,6 +176,7 @@ public class Trump : MonoBehaviour {
 			Instantiate(bloodLarge, transform.position, Quaternion.identity);
 			Instantiate(screenShakeLarge, transform.position, Quaternion.identity);
 			SoundManager.instance.PlayOnceAltered(2);
+			isDead = true;
 			Destroy(gameObject);
 		}
 
