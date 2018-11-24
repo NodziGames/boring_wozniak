@@ -22,6 +22,7 @@ public class CameraControl : MonoBehaviour {
 
 
 			transform.position = Vector3.Lerp(transform.position, new Vector3(temp_trump.x - (((temp_trump.x - cursorPos.x) / 2) * offsetAmount), temp_trump.y - (((temp_trump.y - cursorPos.y) / 2) * (offsetAmount * 1.77f)), -10f), 0.1f);
+			Camera.main.GetComponent<Camera>().orthographicSize = Mathf.Lerp(Camera.main.GetComponent<Camera>().orthographicSize, 120, 0.025f);
 		}
 	}
 
@@ -32,6 +33,6 @@ public class CameraControl : MonoBehaviour {
 			dir = -1f;
 		else
 			dir = 1f;
-		transform.position = new Vector3(transform.position.x + (amount * dir), transform.position.y, -10f);
+		transform.position = new Vector3(transform.position.x + (amount * dir), transform.position.y, transform.position.z);
 	}
 }

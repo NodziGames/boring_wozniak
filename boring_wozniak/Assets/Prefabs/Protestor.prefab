@@ -109,6 +109,8 @@ MonoBehaviour:
   - {fileID: 1455921623703032, guid: 59a566efd53a4a3439b8966693b0e589, type: 2}
   - {fileID: 1092434551636512, guid: cec1a3c0261984641b72c0ba8b089c4d, type: 2}
   hitPoints: 0
+  speed: 35
+  rock: {fileID: 1331306636188872, guid: f596da4745bd0cc46be6f79113fd523e, type: 2}
 --- !u!212 &212685605516608918
 SpriteRenderer:
   m_ObjectHideFlags: 1

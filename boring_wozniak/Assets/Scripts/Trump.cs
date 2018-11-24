@@ -168,7 +168,7 @@ public class Trump : MonoBehaviour {
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.transform.tag == "Enemy")
+		if (collision.transform.tag == "Enemy" || collision.transform.tag == "Rock")
 		{
 			Instantiate(corpse, transform.position, Quaternion.identity);
 			Instantiate(bloodLarge, transform.position, Quaternion.identity);

@@ -109,6 +109,8 @@ MonoBehaviour:
   - {fileID: 1455921623703032, guid: 59a566efd53a4a3439b8966693b0e589, type: 2}
   - {fileID: 1092434551636512, guid: cec1a3c0261984641b72c0ba8b089c4d, type: 2}
   hitPoints: 0
+  stun: {fileID: 1802808017198910, guid: 145f80b12687bca4099cadb3ade11d6a, type: 2}
+  speed: 25
 --- !u!212 &212788866179161076
 SpriteRenderer:
   m_ObjectHideFlags: 1
