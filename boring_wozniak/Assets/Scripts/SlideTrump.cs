@@ -46,14 +46,8 @@ public class SlideTrump : MonoBehaviour {
 			{
 				speed = 0f;
 				friction = 0f;
-				Invoke("DestroyItself", 10f);
 			}
 		}
 
-	}
-
-	void DestroyItself()
-	{
-		Destroy(gameObject);
 	}
 }

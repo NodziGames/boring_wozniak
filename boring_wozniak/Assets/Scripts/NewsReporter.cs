@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NewsReporter : Enemy {
 
-	// Use this for initialization
 	public float speed;
 	private Vector2 direction;
 
