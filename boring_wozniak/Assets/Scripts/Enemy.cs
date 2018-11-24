@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour {
 			Instantiate(largeBlood, transform.position, Quaternion.identity);
 			Instantiate(screenShakeSmall, transform.position, Quaternion.identity);
 			Instantiate(corpse, transform.position, Quaternion.identity);
-			gameManager.score += this.score;
+			//gameManager.score += this.score;
 			SoundManager.instance.PlayOnceAltered(1);
 			Destroy(gameObject);
 		}
