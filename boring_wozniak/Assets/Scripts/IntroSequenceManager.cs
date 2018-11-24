@@ -26,7 +26,7 @@ public class IntroSequenceManager : MonoBehaviour {
 	}
 
 	void updateIntroSequence () {
-		if (currentPos < 3) {
+		if (currentPos < introSequencePanels.Length - 1) {
 			Animator panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
             panelAnimator.SetBool("slide_out", true);
 			currentPos++;
