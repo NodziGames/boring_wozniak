@@ -38,8 +38,6 @@ public class Slide : MonoBehaviour {
 
 		sr.sortingOrder = (Mathf.RoundToInt(transform.position.y) + 12) * -1;
 
-		Debug.Log(sr.sortingOrder);
-
 		if (speed <= 0f)
 		{
 			if (friction != 0f)

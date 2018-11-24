@@ -152,4 +152,12 @@ public class Trump : MonoBehaviour {
 	{
 		shotReady = true;
 	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.transform.tag == "Enemy")
+		{
+			Debug.Log("You ded bitch");
+		}
+	}
 }
