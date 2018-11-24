@@ -48,7 +48,7 @@ public class SoundManager : MonoBehaviour {
 
 			sfx.clip = voiceLines[Random.Range(0, 35)];
 			sfx.PlayOneShot(sfx.clip);
-			Invoke("PlayVoiceLine", 5f);
+			Invoke("PlayVoiceLine", 20f);
 		}
 	}
 }

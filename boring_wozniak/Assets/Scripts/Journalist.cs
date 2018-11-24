@@ -8,6 +8,8 @@ public class Journalist : Enemy {
 
 	private float waitTime = 3f;
 	private float walkTime = 3f;
+	private float stunWait = 4f;
+	public GameObject stun;
 	public float speed;
 	private Vector2 direction;
 	private bool moving = false;
@@ -18,6 +20,7 @@ public class Journalist : Enemy {
 		sr = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 		Invoke("StartMoving", Random.Range(waitTime - 1f, waitTime + 1f));
+		Invoke("StunStart", stunWait);
 	}
 	void Update () {
 
@@ -58,5 +61,17 @@ public class Journalist : Enemy {
 	{
 		moving = false;
 		Invoke("StartMoving", waitTime + Random.Range(-1f, 1f));
+	}
+
+	void StunStart()
+	{
+		Invoke("Stun", 1.2f);
+		SoundManager.instance.PlayOnceAltered(4);
+	}
+
+	void Stun()
+	{
+		Instantiate(stun, new Vector2(0, 0), Quaternion.identity);
+		Invoke("StunStart", stunWait);
 	}
 }

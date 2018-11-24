@@ -104,6 +104,7 @@ MonoBehaviour:
   corpse: {fileID: 1933157215873134, guid: 879c519667c3c94468bdb9281a3900b6, type: 2}
   powerup: []
   hitPoints: 0
+  stun: {fileID: 1802808017198910, guid: 145f80b12687bca4099cadb3ade11d6a, type: 2}
   speed: 25
 --- !u!212 &212788866179161076
 SpriteRenderer:
