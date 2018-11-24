@@ -201,8 +201,8 @@ public class Trump : MonoBehaviour {
 		}
 		else if (powerup.name == e_Powerups.MOVEMENT + "(Clone)") {
 			int multiplier = 2;
-			if (this.baseMvSpeed <= this.speed * multiplier)
-				this.speed *= multiplier;
+			this.speed *= multiplier;
+			this.speed = Mathf.Clamp(this.speed, this.baseMvSpeed, this.baseMvSpeed * 2);
 			Invoke("invokePowerMovementRevert", powerup.duration);
 		}
 	}
