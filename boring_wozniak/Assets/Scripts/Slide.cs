@@ -15,8 +15,12 @@ public class Slide : MonoBehaviour {
 
 		sr = GetComponent<SpriteRenderer>();
 
-		direction = transform.position - GameManager.instance.GetComponent<GameManager>().trump.transform.position;
-		direction.Normalize();
+
+		if (GameObject.Find("Trump"))
+		{
+			direction = transform.position - GameManager.instance.GetComponent<GameManager>().trump.transform.position;
+			direction.Normalize();
+		}
 
 		if (direction.x < 0)
 		{
