@@ -51,12 +51,14 @@ public class GameManager : MonoBehaviour {
 		//Tiane (Next wave effect GUI)
 		SoundManager.instance.PlayOnce(5);
 		wave += 1;
+		GameUIManager.instance.UpdateCurrentWaveText(wave);
 		Invoke("NextWave", waveLength);
 	}
 
 	public void AddScore(int newscore)
 	{
 		score += newscore;
+		GameUIManager.instance.UpdateCurrentScoreText(score);
 	}
 
 }

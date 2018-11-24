@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroSequenceManager : MonoBehaviour {
 
@@ -32,6 +33,9 @@ public class IntroSequenceManager : MonoBehaviour {
 			currentPos++;
 			panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
 			panelAnimator.SetBool("slide_in", true);
+		} else {
+			//just scene transition for now
+			SceneManager.LoadScene("Main");
 		}
 	}
 }

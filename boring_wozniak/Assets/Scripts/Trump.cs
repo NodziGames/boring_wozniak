@@ -182,6 +182,7 @@ public class Trump : MonoBehaviour {
 			if (GameManager.instance.GetComponent<GameManager>().score > PlayerPrefs.GetInt("highscore", 0))
 			{
 				PlayerPrefs.SetInt("highscore", GameManager.instance.GetComponent<GameManager>().score);
+				GameUIManager.instance.UpdateHighScoreText(GameManager.instance.score);
 				Debug.Log("NEW HIGHSCORE!");
 			}
 
