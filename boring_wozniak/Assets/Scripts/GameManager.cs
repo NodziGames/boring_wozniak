@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour {
 	public GameObject portal;
 	public float spawnTime;
 	public int spawnHP;
+
+	//Tiane (Draw out score on GUI)
 	public int score;
+
 	public int wave;
+	public float waveLength;
 
     void Awake()
     {
@@ -27,10 +31,7 @@ public class GameManager : MonoBehaviour {
 	private void Start()
 	{
 		Invoke("SpawnEnemy", spawnTime);
-	}
-
-	void Update () {
-
+		Invoke("NextWave", waveLength);
 	}
 
 	void SpawnEnemy()
@@ -42,6 +43,18 @@ public class GameManager : MonoBehaviour {
 			portalComponent.enemyHp = spawnHP + (wave * 5);
 			Invoke("SpawnEnemy", Mathf.Max(spawnTime - (wave / 2), 2));
 		}
+	}
+
+	void NextWave()
+	{
+		//Tiane (Next wave effect GUI)
+		wave += 1;
+		Invoke("NextWave", waveLength);
+	}
+
+	public void AddScore(int newscore)
+	{
+		score += newscore;
 	}
 
 }
