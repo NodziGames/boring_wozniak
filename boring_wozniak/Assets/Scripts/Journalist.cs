@@ -13,6 +13,7 @@ public class Journalist : Enemy {
 	public float speed;
 	private Vector2 direction;
 	private bool moving = false;
+	public GameObject charge;
 
 	private GameObject[] boundaries;
 
@@ -92,8 +93,9 @@ public class Journalist : Enemy {
 	{
 		if (GameObject.Find("Trump"))
 		{
+			Instantiate(charge, new Vector2(transform.position.x, transform.position.y - 7f), Quaternion.identity, this.transform);
 			Invoke("Stun", 1.2f);
-			SoundManager.instance.PlayOnceAltered(4);
+			SoundManager.instance.PlayOnce(4);
 		}
 	}
 

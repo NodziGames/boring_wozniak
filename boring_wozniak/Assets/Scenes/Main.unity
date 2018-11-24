@@ -378,7 +378,7 @@ MonoBehaviour:
   - {fileID: 274125619}
   score: 0
   wave: 1
-  waveLength: 5
+  waveLength: 20
 --- !u!4 &370188823
 Transform:
   m_ObjectHideFlags: 0
