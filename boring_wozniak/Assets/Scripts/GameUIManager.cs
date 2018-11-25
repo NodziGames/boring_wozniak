@@ -10,8 +10,12 @@ public class GameUIManager : MonoBehaviour {
 	public Text currentScoreText;
 	public Text highScoreText;
 	public Text currentWaveText;
+	public GameObject difficultyUpImage;
+	private bool difficultyImageEnabled;
+	private float difficultyImageTimePassed;
 	public GameObject deathPanel;
 	public GameObject deathText;
+	public bool isDeathScreen = false;
 	public Text newHighScoreText;
 	public Text newHighScoreNumText;
 	public GameObject trophyImage;
@@ -31,6 +35,16 @@ public class GameUIManager : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
 			PauseGame();
 		}
+		
+		if (difficultyImageEnabled) {
+			difficultyImageTimePassed += Time.deltaTime;
+			if (difficultyImageTimePassed > 1f) {
+                difficultyUpImage.GetComponent<Animator>().SetBool("drop_out", false);
+                difficultyUpImage.SetActive(false);
+				difficultyImageEnabled = false;
+				difficultyImageTimePassed = 0;
+			}
+		}
 	}
 
 	public void UpdateCurrentScoreText (int currentScore) {
@@ -39,6 +53,9 @@ public class GameUIManager : MonoBehaviour {
 
 	public void UpdateCurrentWaveText (int currentWave) {
 		currentWaveText.text = "WAVE " + (currentWave);
+		difficultyUpImage.SetActive(true);
+		difficultyUpImage.GetComponent<Animator>().SetBool("drop_out", true);
+		difficultyImageEnabled = true;
 	}
 
 	public void UpdateHighScoreText (int highScore) {
@@ -47,6 +64,7 @@ public class GameUIManager : MonoBehaviour {
 
 	public void OpenDeathScreen (bool isDead) {
 		deathPanel.SetActive(isDead);
+		isDeathScreen = true;
 	}
 
 	public void AddNewHighScoreText (int highScore) {

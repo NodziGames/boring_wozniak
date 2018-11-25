@@ -11,9 +11,12 @@ public class IntroSequenceManager : MonoBehaviour {
 	public GameObject[] introSequencePanels;
 	public Button playButton;
 	public Button quitButton;
+	public Button resetHighscoreButton;
 	public GameObject fadeIn;
 
 	private int currentPos = 0;
+
+	public bool introStarted = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +25,7 @@ public class IntroSequenceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+		if ((Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && introStarted) {
 			updateIntroSequence();
 		}
 	}
@@ -33,8 +36,10 @@ public class IntroSequenceManager : MonoBehaviour {
             Animator panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
             if (currentPos == 0)
             {
+				introStarted = true;
                 playButton.enabled = false;
 				quitButton.enabled = false;
+				resetHighscoreButton.enabled = false;
                 panelAnimator.SetBool("slide_in", true);
             } else {
                 panelAnimator = (Animator)introSequencePanels[currentPos - 1].GetComponent("Animator");
@@ -57,5 +62,9 @@ public class IntroSequenceManager : MonoBehaviour {
 	void NextScene()
 	{
 		SceneManager.LoadScene("Main");
+	}
+
+	public void ResetHighScore() {
+		PlayerPrefs.SetInt("highscore", 0);
 	}
 }
