@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 61992250291701244}
   m_Layer: 8
   m_Name: Trump
-  m_TagString: Untagged
+  m_TagString: Trump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,6 +162,8 @@ MonoBehaviour:
   accuracy: 8
   doubleShot: 0
   damage: 10
+  footSparkle: {fileID: 1573994004554462, guid: 84abb815267a13245a75cc039efcd300,
+    type: 2}
 --- !u!212 &212193342697415592
 SpriteRenderer:
   m_ObjectHideFlags: 1

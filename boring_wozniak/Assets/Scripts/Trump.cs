@@ -94,6 +94,7 @@ public class Trump : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				Bullet component = newBullet.GetComponent<Bullet>();
+				changeBulletSpriteColorWhenDDIsActive(newBullet);
 				component.accuracy = accuracy;
 				component.damage = damage;
 			}
@@ -101,9 +102,11 @@ public class Trump : MonoBehaviour {
 			{
 				GameObject newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
 				Bullet component = newBullet.GetComponent<Bullet>();
+				changeBulletSpriteColorWhenDDIsActive(newBullet);
 				component.accuracy = accuracy * 2;
 				component.damage = damage;
 				newBullet = Instantiate(bullet, deporter.transform.position, Quaternion.identity);
+				changeBulletSpriteColorWhenDDIsActive(newBullet);
 				component = newBullet.GetComponent<Bullet>();
 				component.accuracy = accuracy * 2;
 				component.damage = damage;
@@ -241,6 +244,16 @@ public class Trump : MonoBehaviour {
 	private void invokePowerMovementRevert() {
 		this.speed = baseMvSpeed;
 		footSparkle.SetActive(false);
+	}
+
+	private void changeBulletSpriteColorWhenDDIsActive(GameObject bullet) {
+		SpriteRenderer bulletSprite = bullet.GetComponent<SpriteRenderer>();
+		if (damage > baseDamage) {
+			bulletSprite.color = Color.red;
+		}
+		else {
+			bulletSprite.color = Color.white;
+		}
 	}
 
 }
