@@ -38,7 +38,7 @@ public class GameUIManager : MonoBehaviour {
 	}
 
 	public void UpdateCurrentWaveText (int currentWave) {
-		currentWaveText.text = "WAVE " + (currentWave + 1);
+		currentWaveText.text = "WAVE " + (currentWave);
 	}
 
 	public void UpdateHighScoreText (int highScore) {
