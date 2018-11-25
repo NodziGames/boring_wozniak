@@ -11,6 +11,7 @@ public class IntroSequenceManager : MonoBehaviour {
 	public GameObject[] introSequencePanels;
 	public Button playButton;
 	public Button quitButton;
+	public GameObject fadeIn;
 
 	private int currentPos = 0;
 
@@ -43,12 +44,18 @@ public class IntroSequenceManager : MonoBehaviour {
 			}   
 		} else {
 			//just scene transition for now
-			SceneManager.LoadScene("Main");
+			Instantiate(fadeIn, new Vector3(0f, 0f, 0f), Quaternion.identity, Camera.main.transform);
+			Invoke("NextScene", 1f);
 		}
         currentPos++;
 	}
 
 	public void QuitGame() {
 		Application.Quit();
+	}
+
+	void NextScene()
+	{
+		SceneManager.LoadScene("Main");
 	}
 }

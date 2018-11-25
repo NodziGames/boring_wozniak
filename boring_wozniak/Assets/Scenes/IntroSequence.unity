@@ -1430,7 +1430,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1953997545}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1486,6 +1486,7 @@ MonoBehaviour:
   - {fileID: 1996897024}
   playButton: {fileID: 2129645029}
   quitButton: {fileID: 2004058211}
+  fadeIn: {fileID: 1229278458102728, guid: 14c6fd14ced581942b2d0cdae3dc323a, type: 2}
 --- !u!1 &1953997543
 GameObject:
   m_ObjectHideFlags: 0
