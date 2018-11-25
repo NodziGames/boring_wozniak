@@ -42,6 +42,7 @@ public class SlideTrump : MonoBehaviour {
 			Trump.isDead = false;
 			Instantiate(fadeIn, new Vector3(0f, 0f, 0f), Quaternion.identity, Camera.main.transform);
 			Invoke("invokeSceneChange", 1.0f);
+			GameUIManager.instance.CloseDeathText();
 		}
 
 		speed -= friction;

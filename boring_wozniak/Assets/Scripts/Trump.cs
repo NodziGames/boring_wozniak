@@ -36,6 +36,10 @@ public class Trump : MonoBehaviour {
 	
 	private Rigidbody2D rb;
 
+	//Potential powerup effects
+
+	public GameObject footSparkle;
+
 	void Start () {
 
 		ac = GetComponent<Animator>();
@@ -177,6 +181,7 @@ public class Trump : MonoBehaviour {
 			Instantiate(screenShakeLarge, transform.position, Quaternion.identity);
 			SoundManager.instance.PlayOnceAltered(2);
 			isDead = true;
+			GameUIManager.instance.OpenDeathScreen(isDead);
 
 			//Manage Highscore
 			if (GameManager.instance.GetComponent<GameManager>().score > PlayerPrefs.GetInt("highscore", 0))
@@ -216,6 +221,7 @@ public class Trump : MonoBehaviour {
 			int multiplier = 2;
 			this.speed *= multiplier;
 			this.speed = Mathf.Clamp(this.speed, this.baseMvSpeed, this.baseMvSpeed * 2);
+			footSparkle.SetActive(true);
 			Invoke("invokePowerMovementRevert", powerup.duration);
 		}
 	}
@@ -234,6 +240,7 @@ public class Trump : MonoBehaviour {
 
 	private void invokePowerMovementRevert() {
 		this.speed = baseMvSpeed;
+		footSparkle.SetActive(false);
 	}
 
 }

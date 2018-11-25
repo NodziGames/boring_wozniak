@@ -10,6 +10,8 @@ public class GameUIManager : MonoBehaviour {
 	public Text currentScoreText;
 	public Text highScoreText;
 	public Text currentWaveText;
+	public GameObject deathPanel;
+	public GameObject deathText;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +30,18 @@ public class GameUIManager : MonoBehaviour {
 	}
 
 	public void UpdateCurrentWaveText (int currentWave) {
-		currentWaveText.text = "WAVE " + currentWave;
+		currentWaveText.text = "WAVE " + (currentWave + 1);
 	}
 
 	public void UpdateHighScoreText (int highScore) {
 		highScoreText.text = highScore.ToString();
+	}
+
+	public void OpenDeathScreen (bool isDead) {
+		deathPanel.SetActive(isDead);
+	}
+
+	public void CloseDeathText () {
+		deathText.SetActive(false);
 	}
 }
