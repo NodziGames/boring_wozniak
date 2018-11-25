@@ -12,6 +12,11 @@ public class GameUIManager : MonoBehaviour {
 	public Text currentWaveText;
 	public GameObject deathPanel;
 	public GameObject deathText;
+	public Text newHighScoreText;
+	public Text newHighScoreNumText;
+	public GameObject pausePanel;
+
+	private bool isPaused = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +27,17 @@ public class GameUIManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			if (!isPaused) {
+                Time.timeScale = 0.00001f;
+                pausePanel.SetActive(true);
+				isPaused = true;
+			} else {
+				Time.timeScale = 1;
+				pausePanel.SetActive(false);
+				isPaused = false;
+			}
+		}
 	}
 
 	public void UpdateCurrentScoreText (int currentScore) {
@@ -41,7 +56,14 @@ public class GameUIManager : MonoBehaviour {
 		deathPanel.SetActive(isDead);
 	}
 
+	public void AddNewHighScoreText (int highScore) {
+		newHighScoreText.text = "NEW HIGHSCORE!";
+		newHighScoreNumText.text = highScore.ToString();
+	}
+
 	public void CloseDeathText () {
 		deathText.SetActive(false);
+        newHighScoreText.text = "";
+        newHighScoreNumText.text = "";
 	}
 }

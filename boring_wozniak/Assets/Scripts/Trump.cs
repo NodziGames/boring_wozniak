@@ -188,7 +188,7 @@ public class Trump : MonoBehaviour {
 			{
 				PlayerPrefs.SetInt("highscore", GameManager.instance.GetComponent<GameManager>().score);
 				GameUIManager.instance.UpdateHighScoreText(GameManager.instance.score);
-				Debug.Log("NEW HIGHSCORE!");
+				GameUIManager.instance.AddNewHighScoreText(GameManager.instance.score);
 			}
 
 			Destroy(gameObject);
