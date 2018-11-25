@@ -28,15 +28,7 @@ public class GameUIManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			if (!isPaused) {
-                Time.timeScale = 0.00001f;
-                pausePanel.SetActive(true);
-				isPaused = true;
-			} else {
-				Time.timeScale = 1;
-				pausePanel.SetActive(false);
-				isPaused = false;
-			}
+			PauseGame();
 		}
 	}
 
@@ -65,5 +57,24 @@ public class GameUIManager : MonoBehaviour {
 		deathText.SetActive(false);
         newHighScoreText.text = "";
         newHighScoreNumText.text = "";
+	}
+
+	public void PauseGame () {
+		if (!isPaused)
+        {
+            Time.timeScale = 0.00001f;
+            pausePanel.SetActive(true);
+            isPaused = true;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pausePanel.SetActive(false);
+            isPaused = false;
+        }
+	}
+
+	public void QuitGame () {
+		Application.Quit();
 	}
 }
