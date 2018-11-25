@@ -14,6 +14,7 @@ public class GameUIManager : MonoBehaviour {
 	public GameObject deathText;
 	public Text newHighScoreText;
 	public Text newHighScoreNumText;
+	public GameObject trophyImage;
 	public GameObject pausePanel;
 
 	private bool isPaused = false;
@@ -51,6 +52,7 @@ public class GameUIManager : MonoBehaviour {
 	public void AddNewHighScoreText (int highScore) {
 		newHighScoreText.text = "NEW HIGHSCORE!";
 		newHighScoreNumText.text = highScore.ToString();
+		trophyImage.SetActive(true);
 	}
 
 	public void CloseDeathText () {
