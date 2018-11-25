@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 
 	void SpawnEnemy()
 	{
-		if (GameObject.Find("Trump"))
+		if (GameObject.Find("Trump") && !GameUIManager.instance.isDeathScreen)
 		{
 			GameObject newPortal = Instantiate(portal, new Vector3(Random.Range(boundaries[2].transform.position.x, boundaries[0].transform.position.x), Random.Range(boundaries[1].transform.position.y, boundaries[3].transform.position.y), 0f), Quaternion.identity);
 			Portal portalComponent = newPortal.GetComponent<Portal>();

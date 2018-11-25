@@ -15,6 +15,7 @@ public class GameUIManager : MonoBehaviour {
 	private float difficultyImageTimePassed;
 	public GameObject deathPanel;
 	public GameObject deathText;
+	public bool isDeathScreen = false;
 	public Text newHighScoreText;
 	public Text newHighScoreNumText;
 	public GameObject trophyImage;
@@ -63,6 +64,7 @@ public class GameUIManager : MonoBehaviour {
 
 	public void OpenDeathScreen (bool isDead) {
 		deathPanel.SetActive(isDead);
+		isDeathScreen = true;
 	}
 
 	public void AddNewHighScoreText (int highScore) {
