@@ -520,8 +520,8 @@ MonoBehaviour:
   trump: {fileID: 1704628610}
   cameraObj: {fileID: 303794159}
   portal: {fileID: 1278547211413132, guid: 65987aea7d7dd7e468646da6bcceac0e, type: 2}
-  spawnTime: 5
-  spawnHP: 40
+  spawnTime: 4
+  spawnHP: 50
   boundaries:
   - {fileID: 1788323250}
   - {fileID: 947078105}
