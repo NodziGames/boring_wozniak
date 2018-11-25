@@ -26,20 +26,23 @@ public class IntroSequenceManager : MonoBehaviour {
 	}
 
 	public void updateIntroSequence () {
-
-		if (currentPos == 0) {
-			playButton.enabled = false;
-		}
-		
-		if (currentPos < introSequencePanels.Length - 1) {
-			Animator panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
-            panelAnimator.SetBool("slide_out", true);
-			currentPos++;
-			panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
-			panelAnimator.SetBool("slide_in", true);
+		if (currentPos < introSequencePanels.Length) {
+			Debug.Log(currentPos);
+            Animator panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
+            if (currentPos == 0)
+            {
+                playButton.enabled = false;
+                panelAnimator.SetBool("slide_in", true);
+            } else {
+                panelAnimator = (Animator)introSequencePanels[currentPos - 1].GetComponent("Animator");
+                panelAnimator.SetBool("slide_out", true);
+                panelAnimator = (Animator)introSequencePanels[currentPos].GetComponent("Animator");
+                panelAnimator.SetBool("slide_in", true);
+			}   
 		} else {
 			//just scene transition for now
 			SceneManager.LoadScene("Main");
 		}
+        currentPos++;
 	}
 }
