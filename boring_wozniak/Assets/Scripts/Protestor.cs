@@ -24,7 +24,7 @@ public class Protestor : Enemy {
 		sr = GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 		Invoke("StartMoving", 0f);
-		Invoke("ThrowRock", throwTime + Random.Range(-1f, 1f));
+		Invoke("ThrowRock", Random.Range(1f, 2f));
 
 		boundaries = GameManager.instance.GetComponent<GameManager>().boundaries;
 	}
