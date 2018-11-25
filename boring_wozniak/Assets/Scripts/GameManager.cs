@@ -48,11 +48,14 @@ public class GameManager : MonoBehaviour {
 
 	void NextWave()
 	{
-		//Tiane (Next wave effect GUI)
-		SoundManager.instance.PlayOnce(5);
-		wave += 1;
-		GameUIManager.instance.UpdateCurrentWaveText(wave);
-		Invoke("NextWave", waveLength);
+		if (GameObject.Find("Trump"))
+		{
+			//Tiane (Next wave effect GUI)
+			SoundManager.instance.PlayOnce(5);
+			wave += 1;
+			GameUIManager.instance.UpdateCurrentWaveText(wave);
+			Invoke("NextWave", waveLength);
+		}
 	}
 
 	public void AddScore(int newscore)
