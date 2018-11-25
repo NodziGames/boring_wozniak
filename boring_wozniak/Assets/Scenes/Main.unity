@@ -827,6 +827,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 51bf5f76f0840be45afdc31e33611f47, type: 3}
   - {fileID: 8300000, guid: 9c739a8187fbeca46893c05eb6af4f7e, type: 3}
   - {fileID: 8300000, guid: ca683cf8580f25f46b2409814c8f4f30, type: 3}
+  - {fileID: 8300000, guid: 97ec9fe786d90b4478690961113d04d1, type: 3}
   voiceLines:
   - {fileID: 8300000, guid: aeb05f3c8ab5d6d46af19aaebdbaeb0e, type: 3}
   - {fileID: 8300000, guid: 3342ff4d431260f479c7f8101bfd3cd8, type: 3}
@@ -4579,6 +4580,7 @@ MonoBehaviour:
   difficultyUpImage: {fileID: 2017446164}
   deathPanel: {fileID: 456265407}
   deathText: {fileID: 753356009}
+  isDeathScreen: 0
   newHighScoreText: {fileID: 1553118402}
   newHighScoreNumText: {fileID: 924845855}
   trophyImage: {fileID: 1295951842}
