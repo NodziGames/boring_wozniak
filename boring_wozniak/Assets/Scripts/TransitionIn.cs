@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TransitionIn : MonoBehaviour {
 
+	public float speed;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +13,6 @@ public class TransitionIn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-			transform.localScale = new Vector2(transform.localScale.x + 0.1f, transform.localScale.y + 0.1f);
+			transform.localScale = new Vector2(transform.localScale.x + speed, transform.localScale.y + speed);
 	}
 }
