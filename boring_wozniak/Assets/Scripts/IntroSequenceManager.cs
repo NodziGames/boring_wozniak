@@ -10,6 +10,7 @@ public class IntroSequenceManager : MonoBehaviour {
 
 	public GameObject[] introSequencePanels;
 	public Button playButton;
+	public Button quitButton;
 
 	private int currentPos = 0;
 
@@ -20,7 +21,7 @@ public class IntroSequenceManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Space)) {
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
 			updateIntroSequence();
 		}
 	}
@@ -32,6 +33,7 @@ public class IntroSequenceManager : MonoBehaviour {
             if (currentPos == 0)
             {
                 playButton.enabled = false;
+				quitButton.enabled = false;
                 panelAnimator.SetBool("slide_in", true);
             } else {
                 panelAnimator = (Animator)introSequencePanels[currentPos - 1].GetComponent("Animator");
@@ -44,5 +46,9 @@ public class IntroSequenceManager : MonoBehaviour {
 			SceneManager.LoadScene("Main");
 		}
         currentPos++;
+	}
+
+	public void QuitGame() {
+		Application.Quit();
 	}
 }
