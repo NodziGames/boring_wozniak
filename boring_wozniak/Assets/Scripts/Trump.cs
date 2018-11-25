@@ -33,6 +33,7 @@ public class Trump : MonoBehaviour {
 	private float baseFireRate;
 
 	private bool shotReady;
+	private bool isRunningSoundActive;
 	
 	private Rigidbody2D rb;
 
@@ -51,6 +52,7 @@ public class Trump : MonoBehaviour {
 		baseFireRate = fireRate;
 		baseMvSpeed = speed;
 		isDead = false;
+		isRunningSoundActive = false;
 	}
 	
 	// Update is called once per frame
@@ -63,6 +65,9 @@ public class Trump : MonoBehaviour {
 		float vspeed = 0f;
 		float hspeed = 0f;
 
+		if (ac.GetBool("running")) {
+			runningSound();
+		}
 		if (up_key)
 		{
 			vspeed += 1f;
@@ -254,6 +259,19 @@ public class Trump : MonoBehaviour {
 		else {
 			bulletSprite.color = Color.white;
 		}
+	}
+
+	private void runningSound() {
+		if (!isRunningSoundActive) {
+			SoundManager.instance.PlayOnceAltered(8);
+			isRunningSoundActive = true;
+			Invoke("invokeIfRunningSound", 0.3f);
+		}
+
+	}
+
+	private void invokeIfRunningSound() {
+		isRunningSoundActive = false;
 	}
 
 }
