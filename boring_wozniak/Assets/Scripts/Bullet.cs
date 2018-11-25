@@ -48,6 +48,7 @@ public class Bullet : MonoBehaviour {
 
 			if (hit.collider.tag == "Enemy" || hit.collider.tag == "Journalist")
 			{
+				SoundManager.instance.PlayOnceAltered(7);
 				Instantiate(explosion, lastPosition, Quaternion.identity);
 				Destroy(gameObject);
 

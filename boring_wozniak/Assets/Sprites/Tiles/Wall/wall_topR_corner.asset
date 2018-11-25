@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: wall_topR_corner
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 5181f9e4b790ddb43b09aa898a141b2e, type: 3}
-  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  m_Color: {r: 0.17254902, g: 0.17254902, b: 0.17254902, a: 1}
   m_Transform:
     e00: 1
     e01: 0
